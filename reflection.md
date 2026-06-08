@@ -4,9 +4,9 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 
 ## 1. What was broken when you started?
 
-- What did the game look like the first time you ran it?
-- List at least two concrete bugs you noticed at the start  
-  (for example: "the hints were backwards").
+The new game button does not work after a win and the difficulty scales are illogical.
+
+
 
 **Bug Reproduction Log**
 
@@ -14,9 +14,11 @@ Document at least 3 bugs you found. Add rows as needed.
 
 | Input | Expected Behavior | Actual Behavior | Console Output / Error |
 |-------|-------------------|-----------------|------------------------|
-| | | | |
-| | | | |
-| | | | |
+| Pressed new game after win | Game starts over and allows new inputs | Pop-up says "You already won. Start a new game to play again.", but no new game is started | Logic error blocking new inputs |
+| Difficulty attempts | Easy gives the most attempts, hard gives the least, and normal is between the two | Normal has more allowed attempts than easy | Logic error preventing expected gameplay |
+| Difficulty number range | The number range for easy should be shortest, largest for hard, and in-between the two for normal | Normal has wider range than hard | Logic error preventing expected gameplay |
+| Used all attempts | The attempts left count is 0 and the player recieves a game over | A game over occurs before the attempts left count says 0 | Logic error preventing expected gameplay |
+| Show hint | Tells users to go higher or lower based on their input | Incorrectly guides users on when to go higher or lower | Logic error misleading players |
 
 ---
 
